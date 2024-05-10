@@ -18,23 +18,25 @@ Hook, Redux, Redux-Toolkit 모두를 사용한 예시 코드들을 포함하며,
 4. npm 설치
 5. TypeScript + SWC 선택
 6. 필수 npm 추가 설치
+    <details>
+    <summary>빠른 설치</summary>
 
-<details>
-<summary>빠른 설치</summary>
-```
-(Essential)
-npm create vite@latest ./
-npm i vite-plugin-svgr vite-tsconfig-paths @emotion/styled @emotion/react
-(Option)
-npm i react-router-dom
-npm i react-redux @reduxjs/toolkit
-npm i react-responsive
-(ETC)
-npm cache clean --force
-에러 발생 시 --force 붙여서 재실행
-```
-</details>
+    ```
+    (Essential)
+    npm create vite@latest ./
+    npm i vite-plugin-svgr vite-tsconfig-paths @emotion/styled @emotion/react
+    (Option)
+    npm i react-router-dom
+    npm i react-redux @reduxjs/toolkit
+    npm i react-responsive
+    (ETC)
+    뭔가 npm이 말썽을 부리는 것 같다면
+    npm cache clean --force 실행 후
+    npm install
+    설치 에러 발생 시, --force 붙여서 재설치
+    ```
 
+    </details>
 7. 기본 설정 파일 수정
   a. vite.config.ts
   b. tsconfig.json
