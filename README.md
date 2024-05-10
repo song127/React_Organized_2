@@ -5,69 +5,66 @@
 # 프로젝트 시작 세팅
 1. 원하는 workspace file 생성
 2. open
-#### 3. Terminal
+3. Terminal 이동
+4. npm 설치
+5. TypeScript + SWC 선택
+6. 필수 npm 추가 설치
+```
+(Essential)
 npm create vite@latest ./ 
 npm i vite-plugin-svgr vite-tsconfig-paths @emotion/styled @emotion/react
-(Options)
+
+(Option)
 npm i react-router-dom
 npm i react-redux @reduxjs/toolkit
 npm i react-responsive
+```
 
 # 프로젝트 구조 안내
-이 문서는 프로젝트의 주요 디렉토리 및 파일 구조에 대한 개요를 제공합니다. 각 섹션에서는 프로젝트의 핵심 요소와 그 용도에 대해 설명합니다.
+이 문서는 프로젝트의 주요 디렉토리 및 파일 구조에 대한 개요를 제공합니다.
+각 섹션에서는 프로젝트의 핵심 요소와 그 용도에 대해 설명합니다.
 
 ## 1. 폴더 구조
-📦src
-프로젝트의 주요 소스 코드를 포함합니다.
-
-📂assets
-이미지, 아이콘, 그리고 기타 정적 자산을 포함합니다.
-
-📂icons: SVG 아이콘 파일
-📂imgs: 이미지 파일
-📂components
-재사용 가능한 React 컴포넌트들을 포함합니다.
-
-📂actions: 특정 동작을 수행하는 컴포넌트 (예: Auth, ScrollTop)
-📂global: 전역적으로 사용되는 UI 컴포넌트들 (버튼, 입력 필드, 모달 등)
-📂layouts: 페이지 레이아웃을 정의하는 컴포넌트들
-📂providers: 컨텍스트 또는 Redux 프로바이더와 같은 전역 상태 관리 컴포넌트
-📂utils: UI 구성에 사용되는 유틸리티 컴포넌트들
-📂datas
-임시 데이터 파일 또는 목업 데이터를 포함합니다.
-
-📂hooks
-커스텀 React 훅을 포함합니다.
-
-📂networks
-네트워크 요청과 관련된 설정 파일들을 포함합니다. (예: Axios 설정, API 연결)
-
-📂pages
-각 페이지 컴포넌트를 포함합니다. 각 폴더는 특정 기능 또는 페이지 유형을 나타냅니다.
-
-📂routes
-라우팅과 관련된 구성 요소를 포함합니다.
-
-📂styles
-전역 스타일, 초기화 스타일, 테마 설정 등을 포함합니다.
-
-📂utils
-전역적으로 사용되는 유틸리티 함수들을 포함합니다.
-
-📜App.jsx
-애플리케이션의 루트 컴포넌트.
-
-📜index.jsx
-애플리케이션의 진입점. React DOM을 렌더링합니다.
-
-📜reportWebVitals.js
-웹 애플리케이션의 성능 측정을 위한 스크립트.
+📦src : 주요 소스 코드를 포함
+ ┣ 📂assets : 이미지, 아이콘, 그리고 기타 정적 에셋을 모음
+ ┃ ┣ 📂icons
+ ┃ ┗ 📂imgs
+ ┣ 📂components : 주요 공용 컴포넌트 모음
+ ┃ ┣ 📂actions : HOC나 return 없이 액션 수행을 하기위한 컴포넌트들 포함
+ ┃ ┣ 📂global : 공용 일반 컴포넌트들 포함
+ ┃ ┃ ┣ 📂Btns
+ ┃ ┃ ┣ 📂Carousels
+ ┃ ┃ ┣ 📂Etcs
+ ┃ ┃ ┣ 📂Footer
+ ┃ ┃ ┣ 📂Header
+ ┃ ┃ ┣ 📂Inputs
+ ┃ ┃ ┣ 📂Loadings
+ ┃ ┃ ┣ 📂Modals
+ ┃ ┃ ┃ ┣ 📂widgets : Modal 관련 컴포넌트 포함
+ ┃ ┃ ┃ ┃ ┗ 📜ModalWrapper.jsx
+ ┃ ┃ ┃ ┗ 📜RootModals.jsx : 상태 관리 라이브러리 없이, Hook만을 사용하는 경우 내부 switch를 통해 Modal 반환
+ ┃ ┃ ┣ 📂Selectors
+ ┃ ┃ ┣ 📂Tabs
+ ┃ ┃ ┣ 📂Toasts
+ ┃ ┃ ┃ ┣ 📂widgets : Toast 관련 컴포넌트 포함
+ ┃ ┃ ┃ ┃ ┗ 📜ToastWrapper.jsx
+ ┃ ┃ ┃ ┗ 📜RootToast.jsx : 상태 관리 라이브러리 없이, Hook만을 사용하는 경우 내부 switch를 통해 Toast 반환
+ ┃ ┃ ┗ 📂Tooltips
+ ┃ ┣ 📂layouts : 주요 공통 레이아웃 포함
+ ┃ ┣ 📂providers : Hook 용 provider 포함
+ ┃ ┗ 📂utils : Flutter를 모방한 보일러플레이트 컴포넌트 포함
+ ┣ 📂hooks : Hook 모음
+ ┣ 📂networks : Axios, SWR 등 네트워크 관련 파일 모음
+ ┣ 📂pages : 페이지 모음
+ ┣ 📂styles : 전체적인 스타일을 설정하기 위한 파일 모음
+ ┃ ┣ 📂global : 컬러, 폰트, 스크린 등 기본적인 공유 테마 파일 모음
+ ┃ ┗ 📂init : reset, initCSS 등 시작 시 전체적으로 적용시킬 테마 파일 모음
+ ┣ 📂utils : 애니메이션 키 프레임, 유틸 함수 등의 모음
+ ┃ ┣ 📂animations : 애니메이션 키 프레임 코드 포함
+ ┣ 📜App.jsx
+ ┣ 📜index.jsx
 
 ## 2. 추가 안내
-이 프로젝트는 Styled Components와 Redux를 사용하여 스타일과 상태 관리를 합니다.
-각 컴포넌트와 유틸리티 함수는 충분한 주석을 포함하고 있으므로, 코드를 살펴보며 기능을 이해하는 데 도움이 됩니다.
-프로젝트의 확장성과 유지보수를 위해 모듈화와 재사용 가능한 컴포넌트 설계에 중점을 두었습니다.
-
-## 3. 기여 가이드
-새로운 기능을 추가하거나 기존 코드를 수정할 때는 해당 변경 사항을 문서화하고, 적절한 단위 테스트를 포함하는 것이 좋습니다.
-코드 리뷰 프로세스를 통해 팀원들과 코드 품질을 유지하고 개선할 수 있습니다.
+이 프로젝트는 Emotion의 Styled Components를 주 기술로 사용합니다.
+Hook, Redux, Redux-Toolkit 모두를 사용한 예시 코드들을 포함하며, 기본적으로 훅만을 사용해 상태 관리를 합니다.
+프로젝트의 확장성과 유지보수, 무엇보다 빠르고 편한 UI 구현을 위해 모듈화와 재사용 가능한 컴포넌트 설계에 중점을 두었습니다.
