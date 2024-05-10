@@ -38,11 +38,14 @@ Hook, Redux, Redux-Toolkit 모두를 사용한 예시 코드들을 포함하며,
 
     </details>
 7. 기본 설정 파일 수정
-  1. vite.config.ts
-  2. tsconfig.json
-  3. tsconfig.node.json
-  4. .eslinttrc.cjs
-  5. vite-env.d.ts
+    <details>
+    <summary>파일 순서</summary>
+    1. vite.config.ts</br>
+    2. tsconfig.json</br>
+    3. tsconfig.node.json</br>
+    4. .eslinttrc.cjs</br>
+    5. vite-env.d.ts</br>
+    </details>
 8. ctrl + shift + p ⇒ restart ts server
 9. 폴더 구조에 맞게 폴더, 파일 삭제 및 생성
 10. init 코드 설정
