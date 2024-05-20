@@ -1,15 +1,22 @@
-# 유용한 사이트 모음
-
-이 프로젝트는 VSCode, Emotion의 Styled Components를 기반으로 제작되었습니다.  
+# 리액트 기본 세팅 프로젝트
+이 프로젝트와 문서는 VSCode, Emotion의 Styled Components를 기반으로 제작되었습니다.  
 Hook, Redux, Redux-Toolkit 모두를 사용한 예시 코드들을 포함하며, 기본적으로 Hook만을 사용해 상태 관리를 합니다.  
 프로젝트의 확장성과 유지보수, 무엇보다 빠르고 편한 UI 구현을 위해 모듈화와 재사용 가능한 컴포넌트 설계에 중점을 두었습니다.  
-
 또한, 빠르고 편한 구현에 초점에 맞춰 빠른 개발을 위해 유용한 사이트 정보들도 포함합니다.
-
-## 색깔 이름 찾기 사이트
-
-[링크](https://www.color-name.com/)
-
+# 유용한 사이트 모음
+### 애니메이션
+#### [CSS 애니메이션 사이트 1](https://animate.style/)
+#### [CSS 애니메이션 사이트 2](https://animista.net/)
+#### [CSS 애니메이션 사이트 3](https://animejs.com/)
+#### [애니메이션 백그라운드 사이트 1](https://animatedbackgrounds.me/)
+#### [애니메이션 로딩 사이트 1](https://uiball.com/ldrs/)
+### 무료 아이콘
+#### [무료 아이콘 사이트 1](https://futicons.com/)
+#### [무료 아이콘 사이트 2](https://www.flaticon.com/kr)
+#### [무료 아이콘 사이트 3](https://www.iconfinder.com/)
+#### [무료 아이콘 사이트 4](https://www.svgrepo.com/)
+### 기타
+#### [색깔 이름 찾기 사이트](https://www.color-name.com/)
 # 프로젝트 시작 세팅
 
 1. 원하는 workspace file 생성
@@ -56,8 +63,8 @@ Hook, Redux, Redux-Toolkit 모두를 사용한 예시 코드들을 포함하며,
 각 섹션에서는 프로젝트의 핵심 요소와 그 용도에 대해 설명합니다.
 
 ## 폴더 구조
-📦src : 주요 소스 코드를 포함  
-┣ 📂assets : 이미지, 아이콘, 그리고 기타 정적 에셋을 모음  
+📦src : 주요 소스 코드  
+┣ 📂assets : 이미지, 아이콘, 그리고 기타 정적 에셋 모음  
 ┃ ┣ 📂icons  
 ┃ ┗ 📂imgs  
 ┣ 📂components : 주요 공용 컴포넌트 모음  
@@ -88,8 +95,8 @@ Hook, Redux, Redux-Toolkit 모두를 사용한 예시 코드들을 포함하며,
 ┣ 📂networks : Axios, SWR 등 네트워크 관련 파일 모음  
 ┣ 📂pages : 페이지 모음  
 ┣ 📂styles : 전체적인 스타일을 설정하기 위한 파일 모음  
-┃ ┣ 📂global : 컬러, 폰트, 스크린 등 기본적인 공유 테마 파일 모음  
-┃ ┗ 📂init : reset, initCSS 등 시작 시 전체적으로 적용시킬 테마 파일 모음  
+┃ ┣ 📂global : 컬러, 폰트, 스크린 등 기본적인 공유 테마 파일 포함  
+┃ ┗ 📂init : reset, initCSS 등 시작 시 전체적으로 적용시킬 테마 파일 포함  
 ┣ 📂utils : 애니메이션 키 프레임, 유틸 함수 등의 모음  
 ┃ ┣ 📂animations : 애니메이션 키 프레임 코드 포함  
 ┣ 📜App.jsx  
