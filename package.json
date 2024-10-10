@@ -4,8 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "local": "env-cmd -f .env.local vite",
+    "dev": "env-cmd -f .env.dev vite",
+    "prod": "env-cmd -f .env.prod vite",
+    "build:local": "env-cmd -f .env.local tsc && vite build",
+    "build:dev": "env-cmd -f .env.dev tsc && vite build",
+    "build:prod": "env-cmd -f .env.prod tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -14,6 +18,8 @@
     "@emotion/styled": "^11.11.5",
     "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.8",
+    "env-cmd": "^10.1.0",
+    "eslint-config-prettier": "^9.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.1",
@@ -31,6 +37,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "prettier": "3.3.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   }
