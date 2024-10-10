@@ -1,6 +1,7 @@
-import ScrollToTop from "@components/actions/ScrollTop";
-import GlobalStyle from "@styles/global/globalStyle";
 import { BrowserRouter, Routes } from "react-router-dom";
+
+import ScrollToTop from "@/components/actions/ScrollTop";
+import GlobalStyle from "@/styles/global/globalStyle";
 
 function App() {
   return (

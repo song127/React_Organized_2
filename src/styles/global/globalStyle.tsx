@@ -1,14 +1,15 @@
 import { Global, css } from "@emotion/react";
-import reset from "@styles/init/reset";
-import initSetting from "@styles/init/initSetting";
+
+import initSetting from "@/styles/init/initSetting";
+import reset from "@/styles/init/reset";
 
 const initCss = css`
-    ${reset}
-    ${initSetting}
+  ${reset}
+  ${initSetting}
 `;
 
 const GlobalStyle = () => {
-    return <Global styles={initCss} />;
+  return <Global styles={initCss} />;
 };
 
 export default GlobalStyle;

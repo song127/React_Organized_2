@@ -1,4 +1,4 @@
-import LayerAlign from "@utils/widget/LayerAlign";
+import LayerAlign from "@/utils/widget/LayerAlign";
 
 function Row({
   flex = "",
@@ -22,8 +22,7 @@ function Row({
         height: fullHeight ? "100%" : "max-content",
         flexWrap: wrap ? "wrap" : "nowrap",
         gap,
-      }}
-    >
+      }}>
       {props.children}
     </div>
   );

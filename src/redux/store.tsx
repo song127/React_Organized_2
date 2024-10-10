@@ -7,8 +7,7 @@ export const store = configureStore({
     // data: dataReducer,
     // blockchain: blockchainReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }), // to avoid serializable error -> 직렬화 불가능한 객체 전달 시 에러 발생
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }), // to avoid serializable error -> 직렬화 불가능한 객체 전달 시 에러 발생
 });
 
 export type RootState = ReturnType<typeof store.getState>;

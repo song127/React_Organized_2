@@ -23,7 +23,7 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@*": ["./src/*"],
+      "@/*": ["src/*"],
       "@emotion/styled": ["./node_modules/@emotion/styled/*"],
     },
 

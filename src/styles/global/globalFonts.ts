@@ -1,4 +1,4 @@
-import COLORS from "@styles/global/globalColor";
+import COLORS from "@/styles/global/globalColor";
 
 export const FONTS = {
   B60: Font({
@@ -418,7 +418,7 @@ class CustomFont {
     public color: any,
     public weight: number,
     public height: string,
-    public align: string
+    public align: string,
   ) {}
 
   withParams({

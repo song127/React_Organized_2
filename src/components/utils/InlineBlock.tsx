@@ -5,8 +5,7 @@ function InlineBlock({ w = 0, h = 0, ...props }) {
         display: "inline-block",
         marginRight: `${typeof w === "number" ? `${w}px` : w}`,
         marginTop: `${typeof h === "number" ? `${h}px` : h}`,
-      }}
-    >
+      }}>
       {props.children}
     </div>
   );

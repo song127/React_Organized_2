@@ -1,9 +1,4 @@
-export default function SizedBox({
-  w = "max-content",
-  h = "max-content",
-  flex = "",
-  ...props
-}) {
+export default function SizedBox({ w = "max-content", h = "max-content", flex = "", ...props }) {
   let width;
   if (typeof w === "number") {
     width = `${w}px`;
@@ -18,9 +13,7 @@ export default function SizedBox({
   }
 
   return (
-    <div
-      style={{ display: "flex", width: `${width}`, height: `${height}`, flex }}
-    >
+    <div style={{ display: "flex", width: `${width}`, height: `${height}`, flex }}>
       {props.children}
     </div>
   );

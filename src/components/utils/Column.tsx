@@ -1,4 +1,4 @@
-import LayerAlign from "@utils/widget/LayerAlign";
+import LayerAlign from "@/utils/widget/LayerAlign";
 
 export default function Column({
   main = LayerAlign.center,
@@ -22,8 +22,7 @@ export default function Column({
         height: fullHeight ? "100%" : "max-content",
         flexWrap: wrap ? "wrap" : "nowrap",
         gap,
-      }}
-    >
+      }}>
       {props.children}
     </div>
   );

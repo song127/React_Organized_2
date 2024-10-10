@@ -1,4 +1,4 @@
-import LayerAlign from "@utils/widget/LayerAlign";
+import LayerAlign from "@/utils/widget/LayerAlign";
 
 export default function AllFullColumn({
   main = LayerAlign.start,
@@ -21,8 +21,7 @@ export default function AllFullColumn({
         flexWrap: wrap ? "wrap" : "nowrap",
         gap,
       }}
-      {...props}
-    >
+      {...props}>
       {props.children}
     </div>
   );

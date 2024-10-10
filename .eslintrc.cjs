@@ -1,22 +1,32 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: { browser: true, es2020: true, node: true },
   extends: [
     "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  overrides: [],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh"],
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["react", "react-hooks", "@typescript-eslint", "prettier"],
   rules: {
+    "import/no-unresolved": "off", // import 경로 오류 여부
+    "import/named": "off", // named import 사용 여부
+    "react/prop-types": "off", // prop-types 사용 여부
     "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
+      "off",
+      {
+        allowConstantExport: true,
+      },
     ],
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }], // 안쓰는 변수 경고 여부 ex) const a = 1
+    "no-unused-vars": "off", // 안쓰는 변수 경고 여부 ex) const a = 1
     "react/no-unescaped-entities": "off", // react에서 특수문자 사용 여부 ex) &nbsp;
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-types": "off", // 특정 타입 사용 여부 ex) Object, String
     "react/react-in-jsx-scope": "off", // react 사용 여부 ex) import React from 'react'
     // 추후 컴포넌트 확장 여부에 따라 변경 ex) 추후 사용될 수 있는 경우 "off"로 변경

@@ -20,18 +20,7 @@ const EmptyImg = styled.div<EmptyImgProps>`
 
 export default function ImageLoader({ w = 0, h = 0, src = "", round = 0 }) {
   if (src === "" || src === undefined || src === null) {
-    return (
-      <EmptyImg
-        w={w}
-        h={h}
-        round={round}
-      />
-    );
+    return <EmptyImg w={w} h={h} round={round} />;
   }
-  return (
-    <img
-      style={{ width: w, height: h, borderRadius: round }}
-      src={src}
-    />
-  );
+  return <img style={{ width: w, height: h, borderRadius: round }} src={src} />;
 }
