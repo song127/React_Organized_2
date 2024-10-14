@@ -75,7 +75,7 @@ function BasicBorderInput({
   type = "text",
   value,
   setValue,
-  onChange = (value) => {
+  onChange = (_) => {
     return StateEnum.DEFAULT;
   },
   placeholder = "Basic Input",

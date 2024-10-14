@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 import DownArrow from "@/assets/icons/ic-open_eye.svg?react";
+import Spacer from "@/components/utils/Spacer";
 import COLORS from "@/styles/global/globalColor";
 
 interface ContainerProps {
@@ -53,10 +54,10 @@ const SelectedValue = styled.div`
   }
 `;
 
-const DownArrowC = styled(DownArrow)<{ active: string }>`
+const DownArrowC = styled(DownArrow)<{ active: boolean }>`
   top: -4px;
   transition: 0.2s;
-  transform: rotate(${(props) => (props.active === "true" ? "0deg" : "-180deg")});
+  transform: rotate(${({ active }) => (active ? "0deg" : "-180deg")});
 `;
 
 const OptionWrapper = styled.div<{ active: boolean }>`
@@ -146,8 +147,8 @@ function DropdownBtn({ list = [], index = 0, setIndex = (idx: number) => {}, dis
     <Container ref={ref} disabled={disabled}>
       <SelectedValue ref={ref} onClick={() => setActive(!active)}>
         {list[index]}
-        {/* <Spacer /> */}
-        {/* <DownArrowC active={active} /> */}
+        <Spacer />
+        <DownArrowC active={active} />
       </SelectedValue>
       <OptionWrapper active={active}>
         {list.map((value, idx) => (
