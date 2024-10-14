@@ -4,9 +4,21 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 import { StateEnum } from "@/commons/types/StateTypes";
+import Gap from "@/components/utils/Gap";
 import COLORS from "@/styles/global/globalColor";
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  background-color: transparent;
+
+  transition: all 0.2s ease-in-out;
+`;
+
 interface BackboardProps {
+  w: string;
+  h: string;
   borderOn: boolean;
   thickness: string;
   round: string;
@@ -19,15 +31,16 @@ const Backboard = styled.div<BackboardProps>`
   align-items: center;
   justify-content: center;
 
-  width: 100%;
-  height: 100%;
   background-color: ${COLORS.gray_4};
 
   box-sizing: border-box;
 
   transition: all 0.2s ease-in-out;
 
-  ${({ borderOn, thickness, round, state }) => css`
+  ${({ w, h, borderOn, thickness, round, state }) => css`
+    width: ${w};
+    height: ${h};
+
     border: ${thickness} solid transparent;
     border-radius: ${round};
 
@@ -53,48 +66,70 @@ const Input = styled.input`
   }
 `;
 
+interface MessageProps {
+  round: string;
+  state: StateEnum;
+}
+
+const Message = styled.p<MessageProps>`
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+
+  ${({ round, state }) => css`
+    margin-left: ${round};
+    color: ${border_color[state]};
+  `}
+`;
+
 const border_color: Record<StateEnum, string> = {
-  [StateEnum.NONE]: COLORS.transparent,
+  [StateEnum.NONE]: COLORS.blue_1,
   [StateEnum.DEFAULT]: COLORS.blue_1,
   [StateEnum.SUCCESS]: COLORS.green_1,
   [StateEnum.WARNING]: COLORS.yellow_4,
   [StateEnum.ERROR]: COLORS.red_1,
 };
 
-interface BasicBorderInputProps {
+interface ValidationInputProps {
   type?: string;
+  width: string;
+  height: string;
   value: string;
   setValue: (value: string) => void;
-  onChange?: (value: string) => string;
+  onChange?: (value: string) => [StateEnum, string];
   placeholder?: string;
   round?: string;
   thickness?: string;
 }
 
-function BasicBorderInput({
+function ValidationInput({
   type = "text",
+  width,
+  height,
   value,
   setValue,
-  onChange = (_) => {
-    return StateEnum.DEFAULT;
+  onChange = (_: string) => {
+    return [StateEnum.DEFAULT, ""];
   },
   placeholder = "Basic Input",
   round = "12px",
   thickness = "2px",
-}: BasicBorderInputProps) {
+}: ValidationInputProps) {
   const [borderOn, setBorderOn] = useState(false);
-  const [state, setState] = useState(StateEnum.DEFAULT);
-  const ref = useRef<any>(null);
+  const [state, setState] = useState<StateEnum>(StateEnum.DEFAULT);
+  const [validText, setValidText] = useState("");
+  const ref = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newState = onChange(e.target.value) as StateEnum;
+    const [newState, newValidText] = onChange(e.target.value);
     setState(newState);
+    setValidText(newValidText);
     setValue(e.target.value);
   };
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target)) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
         setBorderOn(false);
       }
     };
@@ -107,17 +142,35 @@ function BasicBorderInput({
   }, []);
 
   return (
-    <Backboard ref={ref} borderOn={borderOn} state={state} round={round} thickness={thickness}>
-      <Input
+    <Wrapper>
+      <Backboard
         ref={ref}
-        value={value}
-        type={type}
-        onChange={onChangeHandler}
-        placeholder={placeholder}
-        onFocus={() => setBorderOn(true)}
-      />
-    </Backboard>
+        w={width}
+        h={height}
+        borderOn={borderOn}
+        state={state}
+        round={round}
+        thickness={thickness}>
+        <Input
+          ref={ref}
+          value={value}
+          type={type}
+          onChange={onChangeHandler}
+          placeholder={placeholder}
+          onFocus={() => setBorderOn(true)}
+        />
+      </Backboard>
+
+      <Gap h={5} />
+      {validText === "" ? (
+        <br />
+      ) : (
+        <Message round={round} state={state}>
+          {validText}
+        </Message>
+      )}
+    </Wrapper>
   );
 }
 
-export default BasicBorderInput;
+export default ValidationInput;

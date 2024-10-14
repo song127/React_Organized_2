@@ -1,6 +1,7 @@
 import { Color } from "@/utils/customObjects/CustomColor";
 
 const COLORS = {
+  transparent: Color("transparent"),
   white: Color("#ffffff"),
   black: Color("#000000"),
   dark_1: Color("#2a2a2a"),

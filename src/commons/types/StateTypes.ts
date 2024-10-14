@@ -5,5 +5,3 @@ export enum StateEnum {
   WARNING = "WARNING",
   ERROR = "ERROR",
 }
-
-export type StateEnumType = (typeof StateEnum)[keyof typeof StateEnum];
