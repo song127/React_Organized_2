@@ -123,7 +123,7 @@ const OptionItem = styled.div<{ selected: boolean }>`
   }
 `;
 
-function DropdownBtn({ list = [], index = 0, setIndex = (idx: number) => {}, disabled = false }) {
+function DropdownBtn({ list = [], index = 0, setIndex = (_: number) => {}, disabled = false }) {
   const [active, setActive] = useState(false);
   const ref = useRef<any>(null);
 
