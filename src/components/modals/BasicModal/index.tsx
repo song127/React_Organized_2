@@ -8,7 +8,6 @@ import ModalWrapper from "@/components/modals/ModalWrapper";
 import Align from "@/components/utils/Align";
 import AllFullColumn from "@/components/utils/AllFullColumn";
 import SizedBox from "@/components/utils/SizedBox";
-import { useAppDispatch } from "@/redux/hook/useAppDispatch";
 import { closeModal } from "@/redux/slice/modalSlice";
 import { FadeInKf, TopToBottomKf } from "@/utils/keyframe/BasicKF";
 import { LayerAlign } from "@/utils/widget/LayerAlign";

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ScrollToTop from "@/components/actions/ScrollTop";
+import { GlobalInit } from "@/redux/global/GlobalInit";
 import GlobalStyle from "@/styles/global/globalStyle";
 
 import MainPage from "./pages/MainPage";
@@ -10,6 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyle />
+      <GlobalInit />
       <ScrollToTop />
       {/* <Header /> */}
       <Routes>
