@@ -1,6 +1,12 @@
-import LayerAlign from "@/utils/widget/LayerAlign";
+import { LayerAlign } from "@/utils/widget/LayerAlign";
 
-export default function Align({ margin = 0, alignment = LayerAlign.start, ...props }) {
+interface AlignProps {
+  margin?: number | string;
+  alignment?: LayerAlign;
+  children: React.ReactNode;
+}
+
+export default function Align({ margin = 0, alignment = LayerAlign.start, ...props }: AlignProps) {
   return (
     <div
       style={{
