@@ -89,7 +89,7 @@ module.exports = {
     "import/resolver": {
       typescript: {
         project: "./tsconfig.json",
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".svg"],
+        extensions: [".ts", ".tsx", ".svg"],
       },
     },
   },

@@ -5,13 +5,13 @@ import styled from "@emotion/styled";
 
 import Icon from "@/assets/icons/ic-tootip_info.svg?react";
 import { FadeInKf } from "@/utils/keyframe/BasicKF";
-import PositionAlign from "@/utils/widget/PositionAlign";
+import { PositionAlign } from "@/utils/widget/PositionAlign";
 
 const Wrapper = styled.div`
   position: relative;
 `;
 
-const ArrowContainer = styled.div<{ align: string }>`
+const ArrowContainer = styled.div<{ align: PositionAlign }>`
   position: absolute;
 
   ${({ align }) => {
@@ -106,7 +106,7 @@ const ArrowContainer = styled.div<{ align: string }>`
 `;
 
 interface ArrowTooltipProps {
-  align?: string;
+  align?: PositionAlign;
   children: React.ReactNode;
 }
 
