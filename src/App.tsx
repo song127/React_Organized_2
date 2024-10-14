@@ -1,7 +1,10 @@
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ScrollToTop from "@/components/actions/ScrollTop";
 import GlobalStyle from "@/styles/global/globalStyle";
+
+import MainPage from "./pages/MainPage";
+import { ROUTES } from "./Routes";
 
 function App() {
   return (
@@ -10,13 +13,7 @@ function App() {
       <ScrollToTop />
       {/* <Header /> */}
       <Routes>
-        {/* <Route path={ROUTES.main} element={<MainPage />} />
-            <Route path={ROUTES.test} element={<TestPage />} />
-            <Route path={ROUTES.button} element={<BtnPage />} />
-            <Route path={ROUTES.input} element={<InputPage />} />
-            <Route path={ROUTES.modal} element={<ModalPage />} />
-            <Route path={ROUTES.special} element={<SpecialPage />} />
-            <Route path={ROUTES.profile} element={Auth(<ProfilePage />)} /> */}
+        <Route path={ROUTES.MAIN} element={<MainPage />} />
       </Routes>
       {/* <Footer /> */}
     </BrowserRouter>

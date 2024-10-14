@@ -1,0 +1,82 @@
+  Variables
+
+  Global Redux
+
+  Local Redux
+  
+  Third-party Hooks
+
+  Inner Hooks (React 내부 Hooks, useState 제외)
+
+  Custom Hooks
+
+  Ref Variables
+
+  State Variables
+  - Loading States
+  - UI States
+  - State States
+  - ...
+  - Derived States
+
+  Local Storage
+
+  Event Handlers
+
+  Use Effects
+
+-----------------------------------
+  // const 상수 변수들
+  ex)
+  const msg = ["hi"];
+  
+  // Redux hooks
+  ex)
+  const dispatch = useAppDispatch();
+
+  // Inner hooks
+  ex)
+  const [orderParams, setOrderParams] = useSearchParams();
+
+  // Custom hooks
+  ex)
+  const { currentWallet } = useGlobalWallet();
+
+  // Third-party hooks
+  ex)
+  const { address } = useAccount(); ( wagmi )
+
+  // Refs
+  ex)
+  const currentRef = useRef<HTMLInputElement>(null);
+
+  // State variables
+  ex)
+  // Market and token states
+  const [collateralToken, setCollateralToken] = useState<CollateralApiResponse>(
+    {} as CollateralApiResponse,
+  );
+  const [indexToken, setIndexToken] = useState<CollateralApiResponse>({} as CollateralApiResponse);
+
+  // Order states
+  const [isLong, setIsLong] = useState(true);
+
+  // Leverage states
+  const [leverage, setLeverage] = useState<number>(1);
+
+  // UI states
+  const [isConfirmed, setIsConfirmed] = useState<boolean>(false);
+
+  // Modal states
+  const [openSettingModal, setOpenSettingModal] = useState(false);
+
+  // Loading states
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Other states / 기타
+  const [liquiditySources, setLiquiditySources] = useState<number[]>([0, 1]);
+  const [quote, setQuote] = useState<Quote[]>([] as Quote[]);
+  const [fee, setFee] = useState("0");
+
+  // Derived state / 기타 파생 변수
+  const isWalletConnected = address !== undefined && htaAddress !== ethers.ZeroAddress;

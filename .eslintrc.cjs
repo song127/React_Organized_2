@@ -1,3 +1,4 @@
+// Init Setting From : https://shawnkim.tistory.com/132
 module.exports = {
   root: true,
   env: { browser: true, es2020: true, node: true },
@@ -15,7 +16,8 @@ module.exports = {
   },
   plugins: ["react", "react-hooks", "@typescript-eslint", "prettier"],
   rules: {
-    "import/no-unresolved": "off", // import 경로 오류 여부
+    "react-hooks/exhaustive-deps": "off", // useEffect 빈 배열 사용 여부
+    // "import/no-unresolved": "off", // import 경로 오류 여부
     "import/named": "off", // named import 사용 여부
     "react/prop-types": "off", // prop-types 사용 여부
     "react-refresh/only-export-components": [
@@ -82,5 +84,13 @@ module.exports = {
         },
       },
     ],
+  },
+  settings: {
+    "import/resolver": {
+      typescript: {
+        project: "./tsconfig.json",
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".svg"],
+      },
+    },
   },
 };
