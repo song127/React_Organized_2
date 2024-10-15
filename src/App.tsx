@@ -10,6 +10,7 @@ import {
 } from "@/components/commons/snackbars/SnackbarUIs";
 import MainPage from "@/pages/MainPage";
 import SnackbarPage from "@/pages/SnackbarPage";
+import ValidationPage from "@/pages/ValidationPage";
 import { GlobalSettigInit } from "@/redux/global/GlobalSettingInit";
 import { ROUTES } from "@/Routes";
 import GlobalStyle from "@/styles/global/globalStyle";
@@ -38,6 +39,7 @@ function App() {
         <Routes>
           <Route path={ROUTES.MAIN} element={<MainPage />} />
           <Route path={ROUTES.SNACKBAR} element={<SnackbarPage />} />
+          <Route path={ROUTES.VALIDATION} element={<ValidationPage />} />
         </Routes>
       </SnackbarProvider>
       {/* <Footer /> */}

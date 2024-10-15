@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 import styled from "@emotion/styled";
 
 import COLORS from "@/styles/global/globalColor";
@@ -37,7 +39,7 @@ const Input = styled.input`
 interface BasicInputProps {
   type?: string;
   value: string;
-  setValue: (value: string) => void;
+  setValue: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   round?: string;
 }
@@ -51,12 +53,7 @@ function BasicInput({
 }: BasicInputProps) {
   return (
     <Backboard round={round}>
-      <Input
-        value={value}
-        type={type}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder={placeholder}
-      />
+      <Input value={value} type={type} onChange={(e) => setValue(e)} placeholder={placeholder} />
     </Backboard>
   );
 }

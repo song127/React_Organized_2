@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { initVwViewport } from "../../styles/global/globalScreen";
+import { initVwViewport } from "@/styles/global/globalScreen";
 
 const Container = styled.div`
   display: flex;

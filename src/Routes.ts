@@ -8,6 +8,7 @@ export const ROUTES = createRoutes({
   MODAL: "/modal",
   SNACKBAR: "/snackbar",
   SPECIAL: "/special",
+  VALIDATION: "/validation",
   PROFILE: {
     BASE: "/profile",
     LOGIN: "/login",
