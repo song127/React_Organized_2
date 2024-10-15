@@ -5,25 +5,34 @@ import Gap from "@/components/utils/Gap";
 import useValidationController from "@/pages/ValidationPage/hooks/useValidationController";
 
 export default function ValidationPage() {
-  const controller = useValidationController();
+  const validationController = useValidationController();
 
   return (
     <BasicLayout>
       <InnerLayout>
-        <BasicInput value={controller.input1} setValue={controller.changeInput1Handler} />
-        <BasicInput value={controller.input2} setValue={controller.changeInput2Handler} />
-        <BasicInput value={controller.input3} setValue={controller.changeInput3Handler} />
+        <BasicInput
+          value={validationController.input1}
+          setValue={validationController.changeInput1Handler}
+        />
+        <BasicInput
+          value={validationController.input2}
+          setValue={validationController.changeInput2Handler}
+        />
+        <BasicInput
+          value={validationController.input3}
+          setValue={validationController.changeInput3Handler}
+        />
 
         <Gap h={10} />
-        <span>{controller.isLoadingValidation ? "Loading..." : "Validation Result"}</span>
+        <span>{validationController.isLoadingValidation ? "Loading..." : "Validation Result"}</span>
         <Gap h={10} />
-        <span>isValidationSuccess = {controller.isValidationSuccess.toString()}</span>
+        <span>isValidationSuccess = {validationController.isValidationSuccess.toString()}</span>
         <Gap h={10} />
-        <span>isTyping = {controller.isTyping.toString()}</span>
+        <span>isTyping = {validationController.isTyping.toString()}</span>
         <Gap h={10} />
-        <span>msg = {controller.error?.message.toString()}</span>
-        <span>case = {controller.error?.case.toString()}</span>
-        <span>target = {controller.error?.target.toString()}</span>
+        <span>msg = {validationController.error?.message.toString()}</span>
+        <span>case = {validationController.error?.case.toString()}</span>
+        <span>target = {validationController.error?.target.toString()}</span>
       </InnerLayout>
     </BasicLayout>
   );
