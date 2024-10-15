@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { DEFAULTS } from "@/commons/constants";
 import { validateInput } from "@/pages/ValidationPage/logics/validation";
@@ -17,27 +17,6 @@ export default function useValidationController() {
   const [error, setError] = useState<ValidationError | null>(null);
 
   const [isValidationSuccess, setIsValidationSuccess] = useState(false);
-
-  const changeInput1Handler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsTyping(true);
-    setInput1(e.target.value);
-
-    debounceCheckValidation({ input1Value: e.target.value });
-  }, []);
-
-  const changeInput2Handler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsTyping(true);
-    setInput2(e.target.value);
-
-    debounceCheckValidation({ input2Value: e.target.value });
-  }, []);
-
-  const changeInput3Handler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsTyping(true);
-    setInput3(e.target.value);
-
-    debounceCheckValidation({ input3Value: e.target.value });
-  }, []);
 
   const checkValidation = useCallback(
     ({ input1Value = input1, input2Value = input2, input3Value = input3 }) => {
@@ -66,6 +45,44 @@ export default function useValidationController() {
     [checkValidation],
   );
 
+  const changeInput1Handler = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const newInput1 = e.target.value;
+      setIsTyping(true);
+      console.log("newInput1 : ", newInput1);
+      setInput1(newInput1);
+
+      debounceCheckValidation({ input1Value: newInput1 });
+    },
+    [debounceCheckValidation],
+  );
+
+  const changeInput2Handler = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const newInput2 = e.target.value;
+      setIsTyping(true);
+      setInput2(newInput2);
+
+      debounceCheckValidation({ input2Value: newInput2 });
+    },
+    [debounceCheckValidation],
+  );
+
+  const changeInput3Handler = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const newInput3 = e.target.value;
+      setIsTyping(true);
+      setInput3(newInput3);
+
+      debounceCheckValidation({ input3Value: newInput3 });
+    },
+    [debounceCheckValidation],
+  );
+
+  useEffect(() => {
+    console.log("input1 : ", input1);
+  }, [input1]);
+
   return {
     input1,
     input2,
@@ -73,7 +90,6 @@ export default function useValidationController() {
     changeInput1Handler,
     changeInput2Handler,
     changeInput3Handler,
-
     isTyping,
     isLoadingValidation,
     error,
