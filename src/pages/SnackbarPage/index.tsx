@@ -6,12 +6,13 @@ import SizedBox from "@/components/utils/SizedBox";
 import COLORS from "@/styles/global/globalColor";
 import { showSnackbar } from "@/utils/actions";
 
-export default function MainPage() {
+export default function SnackbarPage() {
   return (
     <BasicLayout>
       <InnerLayout>
-        <h1>Main Page</h1>
+        <h1>Snackbar Page</h1>
 
+        <Gap h={20} />
         <SizedBox w={"18.75rem"} h={"2.5rem"}>
           <RectangleBtn
             backColor={COLORS.blue_10}

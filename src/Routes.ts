@@ -6,6 +6,7 @@ export const ROUTES = createRoutes({
   BUTTON: "/button",
   INPUT: "/input",
   MODAL: "/modal",
+  SNACKBAR: "/snackbar",
   SPECIAL: "/special",
   PROFILE: {
     BASE: "/profile",

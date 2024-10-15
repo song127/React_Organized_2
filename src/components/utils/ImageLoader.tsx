@@ -2,8 +2,8 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 interface EmptyImgProps {
-  w: number;
-  h: number;
+  w: number | string;
+  h: number | string;
   round: number;
 }
 
@@ -18,7 +18,14 @@ const EmptyImg = styled.div<EmptyImgProps>`
   `}
 `;
 
-export default function ImageLoader({ w = 0, h = 0, src = "", round = 0 }) {
+interface ImageLoaderProps {
+  w?: number | string;
+  h?: number | string;
+  src?: string;
+  round?: number;
+}
+
+export default function ImageLoader({ w = 0, h = 0, src = "", round = 0 }: ImageLoaderProps) {
   if (src === "" || src === undefined || src === null) {
     return <EmptyImg w={w} h={h} round={round} />;
   }

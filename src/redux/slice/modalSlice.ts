@@ -1,7 +1,7 @@
 // src/redux/slices/modalSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { ModalPropsMap, ModalType } from "@/commons/types/ModalTypes";
+import { ModalPropsMap, ModalType } from "@/types/domain/ModalTypes";
 
 interface BaseModalProps {
   [key: string]: any;

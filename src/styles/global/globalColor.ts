@@ -45,6 +45,7 @@ const COLORS = {
   blue_14: Color("#DDDCFF"),
   blue_15: Color("#EBEEFF"),
   blue_16: Color("#EEEEFF"),
+  blue_dvx: Color("#377BFF"),
   simple_blue_1: Color("#498EF6"),
   simple_blue_2: Color("#1f314e"),
 
@@ -53,6 +54,7 @@ const COLORS = {
   red_2: Color("#FF6262"),
   red_3: Color("#FF6F66"),
   red_5: Color("#FFEFEF"),
+  red_dvx: Color("#F24949"),
 
   green_1: Color("#69CAA1"),
   green_2: Color("#69CAA1"),

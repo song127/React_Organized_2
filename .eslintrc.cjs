@@ -18,7 +18,6 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-empty-object-type": "off", // 빈 object 사용 여부
     "react-hooks/exhaustive-deps": "off", // useEffect 빈 배열 사용 여부
-    // "import/no-unresolved": "off", // import 경로 오류 여부
     "import/named": "off", // named import 사용 여부
     "react/prop-types": "off", // prop-types 사용 여부
     "react-refresh/only-export-components": [

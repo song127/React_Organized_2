@@ -10,6 +10,7 @@ const initSetting = css`
       background-color 0.3s ease-in-out;
 
     font-family: "Outfit", sans-serif;
+    background-color: ${COLORS.transparent};
     color: ${COLORS.dark_1};
   }
 

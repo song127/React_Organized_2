@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 
-import { ModalType } from "@/commons/types/ModalTypes";
 import { useGlobalModal } from "@/redux/hook/useGlobalModal";
+import { ModalType } from "@/types/domain/ModalTypes";
 
 // React.lazy를 사용하여 모달 컴포넌트 동적 임포트
 const BasicModal = lazy(() => import("@/components/modals/BasicModal"));

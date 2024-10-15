@@ -3,7 +3,7 @@ import { SerializedStyles, css } from "@emotion/react";
 // 반응형 모바일 웹앱 자동 조정을 위한 Screen Size Auto Setting
 
 // 기준 화면 너비
-export const initVwViewport = 360;
+export const initVwViewport = 1080;
 
 // pixel을 vw로 변환해주는 함수
 const getVw = (px: number) => `${(px / (initVwViewport * 0.01 * 1)) * 1}vw`;

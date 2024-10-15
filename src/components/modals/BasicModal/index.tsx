@@ -2,13 +2,13 @@ import { useEffect, useRef } from "react";
 
 import styled from "@emotion/styled";
 
-import { SpecificModalProps } from "@/commons/types/ModalTypes";
 import RectangleBtn from "@/components/commons/btns/RectangleBtn";
 import ModalWrapper from "@/components/modals/ModalWrapper";
 import Align from "@/components/utils/Align";
 import AllFullColumn from "@/components/utils/AllFullColumn";
 import SizedBox from "@/components/utils/SizedBox";
 import { closeModal } from "@/redux/slice/modalSlice";
+import { SpecificModalProps } from "@/types/domain/ModalTypes";
 import { FadeInKf, TopToBottomKf } from "@/utils/keyframe/BasicKF";
 import { LayerAlign } from "@/utils/widget/LayerAlign";
 

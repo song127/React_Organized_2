@@ -1,4 +1,4 @@
-import { ErrorEnum } from "./types/ErrorTypes";
+import { ErrorEnum } from "@/types/ErrorTypes";
 
 const second = 1000;
 const minute = 60 * second;

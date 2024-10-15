@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-import { StateEnum } from "@/commons/types/StateTypes";
+import { StateEnum } from "@/types/StateTypes";
 import COLORS from "@/styles/global/globalColor";
 
 interface BackboardProps {
