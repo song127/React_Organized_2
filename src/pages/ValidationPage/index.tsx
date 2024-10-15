@@ -21,9 +21,9 @@ export default function ValidationPage() {
         <Gap h={10} />
         <span>isTyping = {controller.isTyping.toString()}</span>
         <Gap h={10} />
-        <span>error = {controller.error?.message.toString()}</span>
-        <span>error = {controller.error?.case.toString()}</span>
-        <span>error = {controller.error?.target.toString()}</span>
+        <span>msg = {controller.error?.message.toString()}</span>
+        <span>case = {controller.error?.case.toString()}</span>
+        <span>target = {controller.error?.target.toString()}</span>
       </InnerLayout>
     </BasicLayout>
   );
