@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import notificationMiddleware from "@/redux/middleware/notificationMiddleware";
 import rootReducer from "@/redux/store/rootSetting";
 
 // import notificationMiddleware from "@/redux/middleware/notificationMiddleware";
@@ -13,8 +14,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false, // to avoid serializable error -> 직렬화 불가능한 객체 전달 시 에러 발생
-    }),
-  // .concat(notificationMiddleware),
+    }).concat(notificationMiddleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
