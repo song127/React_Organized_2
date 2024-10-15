@@ -42,7 +42,7 @@ const notificationMiddleware: Middleware<{}, RootState> = (store) => {
 
   return (next) => (action: any) => {
     // 특정 액션에 반응해서 소켓을 연결하고, 이벤트를 받아 처리하는 로직
-    if (action.type === "modal") {
+    if (action.type === "wallet/connected") {
       if (socket) socket.close();
 
       // const payload = action.payload;
