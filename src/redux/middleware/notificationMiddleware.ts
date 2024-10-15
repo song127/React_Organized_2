@@ -14,7 +14,7 @@ import {
 } from "@/types/domain/NotificationTypes";
 import { showSnackbar } from "@/utils/actions";
 
-const notificationMiddleware: Middleware<{}, RootState> = (store) => (next) => (action) => {
+const notificationMiddleware: Middleware<{}, RootState> = (store) => {
   let socket: Socket | null = null;
 
   const handleNotification = (data: any, channel: string, message: string) => {
@@ -40,7 +40,7 @@ const notificationMiddleware: Middleware<{}, RootState> = (store) => (next) => (
     showSnackbar("error", ERR_MSGS[ErrorEnum.WEBSOCKET_ERROR]);
   };
 
-  return (next: any) => (action: any) => {
+  return (next) => (action: any) => {
     // 특정 액션에 반응해서 소켓을 연결하고, 이벤트를 받아 처리하는 로직
     if (action.type === "modal") {
       if (socket) socket.close();
