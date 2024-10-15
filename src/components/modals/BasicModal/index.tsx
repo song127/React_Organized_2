@@ -2,13 +2,19 @@ import { useEffect, useRef } from "react";
 
 import styled from "@emotion/styled";
 
+import Close from "@/assets/icons/ic-close.svg";
 import RectangleBtn from "@/components/commons/btns/RectangleBtn";
 import ModalWrapper from "@/components/modals/ModalWrapper";
 import Align from "@/components/utils/Align";
 import AllFullColumn from "@/components/utils/AllFullColumn";
+import Gap from "@/components/utils/Gap";
+import ImageLoader from "@/components/utils/ImageLoader";
+import Position from "@/components/utils/Position";
 import SizedBox from "@/components/utils/SizedBox";
-import { closeModal } from "@/redux/slice/modalSlice";
-import { SpecificModalProps } from "@/types/domain/ModalTypes";
+import { useAppDispatch } from "@/redux/hook/useAppDispatch";
+import { closeModal, openModal } from "@/redux/slice/modalSlice";
+import COLORS from "@/styles/global/globalColor";
+import { ModalPropsMap, ModalType, SpecificModalProps } from "@/types/domain/ModalTypes";
 import { FadeInKf, TopToBottomKf } from "@/utils/keyframe/BasicKF";
 import { LayerAlign } from "@/utils/widget/LayerAlign";
 
@@ -37,7 +43,8 @@ const Title = styled.div`
   color: #000;
 `;
 
-function BasicModal({ title, onClose }: SpecificModalProps<"BASIC">) {
+function BasicModal({ title, onClose }: SpecificModalProps<ModalType.BASIC>) {
+  const dispatch = useAppDispatch();
   const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -59,14 +66,16 @@ function BasicModal({ title, onClose }: SpecificModalProps<"BASIC">) {
   return (
     <ModalWrapper>
       <Container ref={innerRef}>
-        <AllFullColumn main={LayerAlign.start} cross={LayerAlign.start}>
-          <Align margin={"10px 10px 0 0"} alignment={LayerAlign.end}>
-            <SizedBox w={40} h={40}>
-              <RectangleBtn round={"10px"} onClick={closeModal}>
-                X
+        <AllFullColumn main={LayerAlign.start} cross={LayerAlign.center}>
+          <Align isAbsolute margin={"10px 10px 0 0"} alignment={LayerAlign.end}>
+            <SizedBox w={16} h={16}>
+              <RectangleBtn round={".2rem"} onClick={() => dispatch(closeModal())}>
+                <ImageLoader w={"100%"} h={"100%"} src={Close} alt={"close"} />
               </RectangleBtn>
             </SizedBox>
           </Align>
+
+          <Gap h={10} />
           <Title>{title}</Title>
         </AllFullColumn>
       </Container>

@@ -1,4 +1,4 @@
-import LayerAlign from "@/utils/widget/LayerAlign";
+import { LayerAlign } from "@/utils/widget/LayerAlign";
 
 export default function AllFullRow({
   main = LayerAlign.start,

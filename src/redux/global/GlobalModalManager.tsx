@@ -1,5 +1,7 @@
 import { lazy, Suspense } from "react";
 
+import { createPortal } from "react-dom";
+
 import { useGlobalModal } from "@/redux/hook/useGlobalModal";
 import { ModalType } from "@/types/domain/ModalTypes";
 
@@ -16,22 +18,22 @@ export function GlobalModalManager() {
 
   if (modals.length === 0) return null;
 
-  return (
+  return createPortal(
     <>
       {modals.map((modal, index) => {
         const SpecificModal = MODAL_COMPONENTS[modal.modalType];
         return (
           <div
             key={index}
-            className="modal-overlay"
             style={{ zIndex: 1000 + index }} // zIndex 조정
           >
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<></>}>
               <SpecificModal {...modal.modalProps} />
             </Suspense>
           </div>
         );
       })}
-    </>
+    </>,
+    document.body,
   );
 }

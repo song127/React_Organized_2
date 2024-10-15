@@ -1,4 +1,4 @@
-import LayerAlign from "@/utils/widget/LayerAlign";
+import { LayerAlign } from "@/utils/widget/LayerAlign";
 
 export default function AllFullColumn({
   main = LayerAlign.start,

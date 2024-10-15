@@ -9,6 +9,7 @@ import {
   SnackbarWarningUI,
 } from "@/components/commons/snackbars/SnackbarUIs";
 import MainPage from "@/pages/MainPage";
+import ModalPage from "@/pages/ModalPage";
 import SnackbarPage from "@/pages/SnackbarPage";
 import ValidationPage from "@/pages/ValidationPage";
 import { GlobalSettigInit } from "@/redux/global/GlobalSettingInit";
@@ -40,6 +41,8 @@ function App() {
           <Route path={ROUTES.MAIN} element={<MainPage />} />
           <Route path={ROUTES.SNACKBAR} element={<SnackbarPage />} />
           <Route path={ROUTES.VALIDATION} element={<ValidationPage />} />
+          <Route path={ROUTES.MODAL} element={<ModalPage />} />
+          <Route path={ROUTES.NOT_FOUND} element={<MainPage />} />
         </Routes>
       </SnackbarProvider>
       {/* <Footer /> */}

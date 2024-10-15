@@ -23,11 +23,12 @@ interface ImageLoaderProps {
   h?: number | string;
   src?: string;
   round?: number;
+  alt?: string;
 }
 
-export default function ImageLoader({ w = 0, h = 0, src = "", round = 0 }: ImageLoaderProps) {
+export default function ImageLoader({ w = 0, h = 0, src = "", round = 0, alt }: ImageLoaderProps) {
   if (src === "" || src === undefined || src === null) {
     return <EmptyImg w={w} h={h} round={round} />;
   }
-  return <img style={{ width: w, height: h, borderRadius: round }} src={src} />;
+  return <img style={{ width: w, height: h, borderRadius: round }} src={src} alt={alt} />;
 }

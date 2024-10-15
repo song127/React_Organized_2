@@ -1,11 +1,25 @@
 import styled from "@emotion/styled";
 
-export default function Position({ top = 0, right = 0, bottom = 0, left = 0 }) {
-  return styled.div`
-    position: absolute;
-    top: ${top};
-    right: ${right};
-    bottom: ${bottom};
-    left: ${left};
-  `;
+interface PositionProps {
+  top?: number | string;
+  right?: number | string;
+  bottom?: number | string;
+  left?: number | string;
+  children?: React.ReactNode;
+}
+
+const Container = styled.div<PositionProps>`
+  position: absolute;
+  ${({ top }) => (top ? `top: ${top};` : "")}
+  ${({ right }) => (right ? `right: ${right};` : "")}
+  ${({ bottom }) => (bottom ? `bottom: ${bottom};` : "")}
+  ${({ left }) => (left ? `left: ${left};` : "")}
+`;
+
+export default function Position({ top, right, bottom, left, children }: PositionProps) {
+  return (
+    <Container top={top} right={right} bottom={bottom} left={left}>
+      {children}
+    </Container>
+  );
 }

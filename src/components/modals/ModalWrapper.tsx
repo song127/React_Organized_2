@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 import styled from "@emotion/styled";
-import { createPortal } from "react-dom";
 
 import { useAppDispatch } from "@/redux/hook/useAppDispatch";
 import { closeAllModals } from "@/redux/slice/modalSlice";
@@ -48,11 +47,7 @@ const ModalWrapper = ({ ...props }: ModalWrapperProps) => {
     };
   }, [dispatch]);
 
-  return createPortal(
-    // 모달을 렌더링할 위치를 지정 / 부모 컴포넌트에 영향을 받지 않음
-    <Container>{props.children}</Container>,
-    document.body, // 모달을 body에 렌더링
-  );
+  return <Container>{props.children}</Container>;
 };
 
 export default ModalWrapper;
