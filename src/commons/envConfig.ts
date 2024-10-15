@@ -4,7 +4,11 @@
 const FRAMEWORK_ENV_KEY = "VITE";
 
 const getEnv = (key: string): string => {
-  return process.env[`${FRAMEWORK_ENV_KEY}_${key}`] ?? "";
+  if (FRAMEWORK_ENV_KEY === "VITE") {
+    return import.meta.env[`${FRAMEWORK_ENV_KEY}_${key}`] ?? "";
+  } else {
+    return process.env[`${FRAMEWORK_ENV_KEY}_${key}`] ?? "";
+  }
 };
 
 export const ENVS = {
