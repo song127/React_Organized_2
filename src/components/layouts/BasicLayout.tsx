@@ -2,10 +2,6 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 import { SCREEN } from "@/commons/constants";
-import Footer from "@/components/globals/Footer";
-import Header from "@/components/globals/Header";
-import Gap from "@/components/utils/Gap";
-import { GlobalModalManager } from "@/redux/global/GlobalModalManager";
 import COLORS from "@/styles/global/globalColor";
 import { pxToRem } from "@/utils/helper";
 import { LayerAlign } from "@/utils/widget/LayerAlign";
