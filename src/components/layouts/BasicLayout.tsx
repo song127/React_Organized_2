@@ -18,15 +18,13 @@ const Layout = styled.div<LayoutProps>`
 
   width: 100%;
   height: 100%;
-  min-height: 1000px;
+  min-height: 100vh;
 
   max-height: max-content;
 
-  padding-bottom: 50px;
-
   transition: all 0.5s ease-in-out;
 
-  margin-top: ${pxToRem(SCREEN.HEADER_HEIGHT)};
+  padding-top: ${pxToRem(SCREEN.HEADER_HEIGHT)};
 
   ${({ main, cross, backColor }) => css`
     justify-content: ${main};

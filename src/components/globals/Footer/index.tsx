@@ -5,6 +5,8 @@ import COLORS from "@/styles/global/globalColor";
 import { pxToRem } from "@/utils/helper";
 
 const Container = styled.footer`
+  bottom: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
