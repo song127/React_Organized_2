@@ -8,6 +8,8 @@ import {
   SnackbarSuccessUI,
   SnackbarWarningUI,
 } from "@/components/commons/snackbars/SnackbarUIs";
+import Footer from "@/components/globals/Footer";
+import Header from "@/components/globals/Header";
 import MainPage from "@/pages/MainPage";
 import ModalPage from "@/pages/ModalPage";
 import SnackbarPage from "@/pages/SnackbarPage";
@@ -19,9 +21,6 @@ import GlobalStyle from "@/styles/global/globalStyle";
 function App() {
   return (
     <BrowserRouter>
-      <GlobalStyle />
-      <GlobalSettigInit />
-      {/* <Header /> */}
       <SnackbarProvider
         maxSnack={3}
         transitionDuration={{ enter: 300, exit: 300 }}
@@ -37,6 +36,9 @@ function App() {
           warning: SnackbarWarningUI,
           info: SnackbarInfoUI,
         }}>
+        <GlobalStyle />
+        <GlobalSettigInit />
+        <Header />
         <Routes>
           <Route path={ROUTES.MAIN} element={<MainPage />} />
           <Route path={ROUTES.SNACKBAR} element={<SnackbarPage />} />
@@ -44,8 +46,8 @@ function App() {
           <Route path={ROUTES.MODAL} element={<ModalPage />} />
           <Route path={ROUTES.NOT_FOUND} element={<MainPage />} />
         </Routes>
+        <Footer />
       </SnackbarProvider>
-      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

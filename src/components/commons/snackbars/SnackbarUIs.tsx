@@ -20,7 +20,7 @@ export const SnackbarErrorUI = styled(MaterialDesignContent)`
   }
   &.notistack-MuiContent-error {
     background-color: ${COLORS.dark_1};
-    border: 0.0625rem solid ${COLORS.red_dvx};
+    border: 0.0938rem solid ${COLORS.red_dvx};
     border-radius: 0.4rem;
   }
 `;
@@ -31,7 +31,7 @@ export const SnackbarWarningUI = styled(MaterialDesignContent)`
   }
   &.notistack-MuiContent-warning {
     background-color: ${COLORS.dark_1};
-    border: 0.0625rem solid ${COLORS.yellow_3};
+    border: 0.0938rem solid ${COLORS.yellow_3};
     border-radius: 0.4rem;
   }
 `;
@@ -42,7 +42,7 @@ export const SnackbarInfoUI = styled(MaterialDesignContent)`
   }
   &.notistack-MuiContent-info {
     background-color: ${COLORS.dark_1};
-    border: 0.0625rem solid ${COLORS.blue_3};
+    border: 0.0938rem solid ${COLORS.blue_3};
     border-radius: 0.4rem;
   }
 `;

@@ -1,9 +1,13 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
+import { SCREEN } from "@/commons/constants";
+import Footer from "@/components/globals/Footer";
+import Header from "@/components/globals/Header";
 import Gap from "@/components/utils/Gap";
 import { GlobalModalManager } from "@/redux/global/GlobalModalManager";
 import COLORS from "@/styles/global/globalColor";
+import { pxToRem } from "@/utils/helper";
 import { LayerAlign } from "@/utils/widget/LayerAlign";
 
 interface LayoutProps {
@@ -18,13 +22,15 @@ const Layout = styled.div<LayoutProps>`
 
   width: 100%;
   height: 100%;
-  min-height: 100vh;
+  min-height: 1000px;
 
   max-height: max-content;
 
   padding-bottom: 50px;
 
   transition: all 0.5s ease-in-out;
+
+  margin-top: ${pxToRem(SCREEN.HEADER_HEIGHT)};
 
   ${({ main, cross, backColor }) => css`
     justify-content: ${main};
@@ -50,9 +56,6 @@ function BasicLayout({
       //   backColor={useDarkModeValue(COLORS.blue_15, COLORS.dark_2)}
       backColor={COLORS.blue_15}
       {...props}>
-      {/* Header Margin */}
-      <Gap h={70} />
-      <GlobalModalManager />
       {children}
     </Layout>
   );

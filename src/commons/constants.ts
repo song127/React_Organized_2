@@ -5,6 +5,11 @@ const minute = 60 * second;
 const hour = 60 * minute;
 const day = 24 * hour;
 
+export const SCREEN = {
+  HEADER_HEIGHT: "70px",
+  FOOTER_HEIGHT: "100px",
+};
+
 export const DEFAULTS = {
   INTERVAL: second,
   FAKE_LOADING_DURATION: 2 * second,

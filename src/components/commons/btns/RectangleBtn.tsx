@@ -7,6 +7,7 @@ interface ContainerProps {
   textColor: string;
   fontSize: number;
   round: string;
+  isFit: boolean;
 }
 
 const Container = styled.button`
@@ -18,13 +19,14 @@ const Container = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: 100%;
-
   transition: all 0.2s ease-in-out;
 
-  ${({ disabled, backColor, textColor, fontSize, round }: ContainerProps) => css`
+  ${({ disabled, backColor, textColor, fontSize, round, isFit }: ContainerProps) => css`
     cursor: ${disabled ? "auto" : "pointer"};
+
+    width: ${isFit ? "max-content" : "100%"};
+    height: ${isFit ? "max-cotent" : "100%"};
+
     background-color: ${backColor};
     border-radius: ${round};
 
@@ -49,23 +51,27 @@ const Container = styled.button`
 `;
 
 interface RectangleBtnProps {
-  children: React.ReactNode;
   onClick: () => void;
   active?: boolean;
   backColor?: string;
   textColor?: string;
   fontSize?: number;
   round?: string;
+  isFit?: boolean;
+  padding?: string;
+  children: React.ReactNode;
 }
 
 function RectangleBtn({
-  children,
   onClick,
   active = true,
   backColor = "black",
   textColor = "white",
   fontSize = 16,
-  round = "0px",
+  round = "0",
+  isFit = false,
+  padding,
+  children,
 }: RectangleBtnProps) {
   return (
     <Container
@@ -74,7 +80,9 @@ function RectangleBtn({
       backColor={backColor}
       textColor={textColor}
       fontSize={fontSize}
-      round={round}>
+      round={round}
+      isFit={isFit}
+      style={{ padding }}>
       {children}
     </Container>
   );
