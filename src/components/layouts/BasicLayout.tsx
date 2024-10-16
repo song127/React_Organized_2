@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 import Gap from "@/components/utils/Gap";
+import { GlobalModalManager } from "@/redux/global/GlobalModalManager";
 import COLORS from "@/styles/global/globalColor";
 import { LayerAlign } from "@/utils/widget/LayerAlign";
 
@@ -51,6 +52,7 @@ function BasicLayout({
       {...props}>
       {/* Header Margin */}
       <Gap h={70} />
+      <GlobalModalManager />
       {children}
     </Layout>
   );
