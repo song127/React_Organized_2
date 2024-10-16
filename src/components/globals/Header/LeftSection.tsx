@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +22,7 @@ export default function LeftSection() {
   return (
     <Container>
       {Object.keys(ROUTES).map((key: any) => (
-        <>
+        <Fragment key={key}>
           <RectangleBtn
             isFit
             padding={EdgeInset.direction(10, 20)}
@@ -30,7 +32,7 @@ export default function LeftSection() {
             {key}
           </RectangleBtn>
           <Gap w={10} />
-        </>
+        </Fragment>
       ))}
     </Container>
   );
