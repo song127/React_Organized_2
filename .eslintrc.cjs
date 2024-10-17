@@ -16,16 +16,22 @@ module.exports = {
   },
   plugins: ["react", "react-hooks", "@typescript-eslint", "prettier"],
   rules: {
-    "@typescript-eslint/no-empty-object-type": "off", // 빈 object 사용 여부
-    "react-hooks/exhaustive-deps": "off", // useEffect 빈 배열 사용 여부
-    "import/named": "off", // named import 사용 여부
-    "react/prop-types": "off", // prop-types 사용 여부
     "react-refresh/only-export-components": [
       "off",
       {
         allowConstantExport: true,
       },
     ],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
+    "@typescript-eslint/no-empty-object-type": "off", // 빈 object 사용 여부
+    "react-hooks/exhaustive-deps": "off", // useEffect 빈 배열 사용 여부
+    "import/named": "off", // named import 사용 여부
+    "react/prop-types": "off", // prop-types 사용 여부
     "no-unused-vars": "off", // 안쓰는 변수 경고 여부 ex) const a = 1
     "react/no-unescaped-entities": "off", // react에서 특수문자 사용 여부 ex) &nbsp;
     "@typescript-eslint/no-explicit-any": "off",
@@ -45,14 +51,8 @@ module.exports = {
         caughtErrorsIgnorePattern: "^_",
       },
     ],
-    "prettier/prettier": [
-      "error",
-      {
-        endOfLine: "auto",
-      },
-    ],
     "import/order": [
-      "warn",
+      "error",
       {
         groups: [
           "object",
@@ -82,6 +82,20 @@ module.exports = {
           order: "asc", // or "desc"
           caseInsensitive: true, // 대소문자 구분 여부
         },
+      },
+    ],
+    "sort-imports": [
+      "error",
+      {
+        ignoreCase: true, // 대소문자 구분 없이 정렬
+        ignoreDeclarationSort: true, // 선언 순서 유지
+        ignoreMemberSort: false, // 멤버 내에서 알파벳 순으로 정렬
+        memberSyntaxSortOrder: [
+          "none", // 기본 import
+          "all", // 와일드카드 import ex) import * as React from 'react'
+          "single", // 단일 import ex) import React from 'react'
+          "multiple", // 명명된 import ex) import { useState, useEffect } from 'react'
+        ],
       },
     ],
   },
