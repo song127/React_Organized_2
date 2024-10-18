@@ -1,22 +1,38 @@
 # 리액트 기본 세팅 프로젝트
+
 이 프로젝트와 문서는 VSCode, Emotion의 Styled Components를 기반으로 제작되었습니다.  
 Hook, Redux, Redux-Toolkit 모두를 사용한 예시 코드들을 포함하며, 기본적으로 Hook만을 사용해 상태 관리를 합니다.  
 프로젝트의 확장성과 유지보수, 무엇보다 빠르고 편한 UI 구현을 위해 모듈화와 재사용 가능한 컴포넌트 설계에 중점을 두었습니다.  
 또한, 빠르고 편한 구현에 초점에 맞춰 빠른 개발을 위해 유용한 사이트 정보들도 포함합니다.
+
 # 유용한 사이트 모음
+
 ### 애니메이션
+
 #### [CSS 애니메이션 사이트 1](https://animate.style/)
+
 #### [CSS 애니메이션 사이트 2](https://animista.net/)
+
 #### [CSS 애니메이션 사이트 3](https://animejs.com/)
+
 #### [애니메이션 백그라운드 사이트 1](https://animatedbackgrounds.me/)
+
 #### [애니메이션 로딩 사이트 1](https://uiball.com/ldrs/)
+
 ### 무료 아이콘
+
 #### [무료 아이콘 사이트 1](https://futicons.com/)
+
 #### [무료 아이콘 사이트 2](https://www.flaticon.com/kr)
+
 #### [무료 아이콘 사이트 3](https://www.iconfinder.com/)
+
 #### [무료 아이콘 사이트 4](https://www.svgrepo.com/)
+
 ### 기타
+
 #### [색깔 이름 찾기 사이트](https://www.color-name.com/)
+
 # 프로젝트 시작 세팅
 
 1. 원하는 workspace file 생성
@@ -24,45 +40,28 @@ Hook, Redux, Redux-Toolkit 모두를 사용한 예시 코드들을 포함하며,
 3. Terminal 이동
 4. npm 설치
 5. TypeScript + SWC 선택
-6. 필수 npm 추가 설치
-    <details>
-    <summary>빠른 설치</summary>
-
-    ```
-    (Essential)
-    npm create vite@latest ./
-    npm i vite-plugin-svgr vite-tsconfig-paths @emotion/styled @emotion/react
-    (Option)
-    npm i react-router-dom
-    npm i react-redux @reduxjs/toolkit
-    npm i react-responsive
-    (ETC)
-    뭔가 npm이 말썽을 부리는 것 같다면
-    npm cache clean --force 실행 후
-    npm install
-    설치 에러 발생 시, --force 붙여서 재설치
-    ```
-
-    </details>
+6. 필수 npm 추가 설치 -> 아래 참조
 7. 기본 설정 파일 수정
-    <details>
-    <summary>파일 순서</summary>
-    1. vite.config.ts</br>
-    2. tsconfig.json</br>
-    3. tsconfig.node.json</br>
-    4. .eslinttrc.cjs</br>
-    5. vite-env.d.ts</br>
-    </details>
-8. ctrl + shift + p ⇒ restart ts server
-9. 폴더 구조에 맞게 폴더, 파일 삭제 및 생성
-10. init 코드 설정
-11. 이후 자유롭게 커스텀
+<details>
+<summary>파일 순서</summary>
+8. vite.config.ts</br>
+9. tsconfig.json</br>
+10. tsconfig.node.json</br>
+11. .eslinttrc.cjs</br>
+12. vite-env.d.ts</br>
+</details>
+13. ctrl + shift + p ⇒ restart ts server
+14. 폴더 구조에 맞게 폴더, 파일 삭제 및 생성
+15. init 코드 설정
+16. 이후 자유롭게 커스텀
 
 # 프로젝트 구조 안내
+
 이 문서는 프로젝트의 주요 디렉토리 및 파일 구조에 대한 개요를 제공합니다.
 각 섹션에서는 프로젝트의 핵심 요소와 그 용도에 대해 설명합니다.
 
 ## 폴더 구조
+
 📦src : 주요 소스 코드  
 ┣ 📂assets : 이미지, 아이콘, 그리고 기타 정적 에셋 모음  
 ┃ ┣ 📂icons  
@@ -100,4 +99,26 @@ Hook, Redux, Redux-Toolkit 모두를 사용한 예시 코드들을 포함하며,
 ┣ 📂utils : 애니메이션 키 프레임, 유틸 함수 등의 모음  
 ┃ ┣ 📂animations : 애니메이션 키 프레임 코드 포함  
 ┣ 📜App.jsx  
-┣ 📜index.jsx  
+┣ 📜index.jsx
+
+# Start
+
+npm create vite@latest ./
+
+# Init
+
+## Basic
+
+Styled
+npm i vite-plugin-svgr vite-tsconfig-paths @emotion/styled @emotion/react
+
+SCSS
+npm i vite-plugin-svgr vite-tsconfig-paths sass
+
+## Redux
+
+npm i react-redux @reduxjs/toolkit react-responsive
+
+# ESLint + Prettier Setting
+
+npm install -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-import eslint-import-resolver-typescript
