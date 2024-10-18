@@ -110,10 +110,13 @@ npm create vite@latest ./
 ## Basic
 
 Styled
-npm i vite-plugin-svgr vite-tsconfig-paths @emotion/styled @emotion/react
+npm i vite-plugin-svgr vite-tsconfig-paths @emotion/styled @emotion/react env-cmd
 
 SCSS
 npm i vite-plugin-svgr vite-tsconfig-paths sass
+
+if use loading spinner
+npm i @chakra-ui/react
 
 ## Redux
 
